@@ -1,4 +1,5 @@
 # Travelify
+(click on master to see full source code)
 Trip managment system (Trip Recommendations are available)
 Travelify - Comprehensive Travel Booking Platform
 Travelify is an innovative travel booking platform built using the MERN stack (MongoDB, Express.js, React, Node.js) with Tailwind CSS for responsive design and seamless user experience. It empowers users to effortlessly plan and book their travel arrangements with unique features that set it apart from conventional platforms.
