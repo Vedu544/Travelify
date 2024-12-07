@@ -74,7 +74,7 @@ const Profile = () => {
             <div className="p-6">
               <h1 className="text-4xl mb-4">About Us</h1>
               <p className="mt-3 text-xl font-semibold">
-                "Travelify is a sophisticated travel planning and booking
+                Travelify is a sophisticated travel planning and booking
                 platform. Users can seamlessly discover, book, and review
                 destinations. Our unique features allow property owners to list
                 their accommodations in the 'Your Accommodation' section.
@@ -82,9 +82,7 @@ const Profile = () => {
                 on their budget in the 'Trip Recommendations' section. Our
                 mission is to create a safe, comfortable, and enjoyable travel
                 experience, emphasizing high-quality adventures and the discovery
-                of new places. This project is officially brought to you by
-                Vedant Kulkarni, Durwa Gawade, Sejal Mhaske, and Janhvi
-                Lokhande."
+                of new places
               </p>
             </div>
           </div>
