@@ -310,13 +310,13 @@ const Homepage = () => {
       )}
 
       {!searchResultsVisible && (
+        
         <div>
           <div className="relative h-screen mt-[-15px] lg:mt-0">
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{
-                backgroundImage:
-                  "url('https://th.bing.com/th/id/OIG2.KEuYXKHk9q1kktPAmnpS?pid=ImgGn')",
+               backgroundImage: "url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80')",
               }}
             >
               {/* // travel buttton */}
