@@ -12,7 +12,7 @@ const Accommodations = () => {
     const fetchAccommodations = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/properties/getAllProperties"
+          `${import.meta.env.VITE_API_BASE_URL}/api/properties/getAllProperties`
         );
         setAccommodations(response.data);
       } catch (error) {

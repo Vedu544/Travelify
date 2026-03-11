@@ -22,7 +22,7 @@ const AccommodationBooking = () => {
     const getAccommodation = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/properties/getProperty/${id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/properties/getProperty/${id}`
         );
         setAccommodation(response.data);
       } catch (error) {
@@ -35,7 +35,7 @@ const AccommodationBooking = () => {
   const AccommodationBooking = async () => {
     try {
       const response = await axios.post(
-        `http://localhost:3000/api/bookings/PropertyBookings/${id}`,
+        `${import.meta.env.VITE_API_BASE_URL}/api/bookings/PropertyBookings/${id}`,
         {
           checkInDate: checkIn, // Change to checkInDate
           checkOutDate: checkOut, // Change to checkOutDate

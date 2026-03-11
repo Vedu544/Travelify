@@ -16,7 +16,7 @@ const MyAccommodation = () => {
     const getMyAccommodation = async () => {
       try {
         const response = await axios.post(
-          `http://localhost:3000/api/properties/getMyProperties/${id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/properties/getMyProperties/${id}`
         );
         setAccommodations(response.data);
         console.log(response.data);
@@ -31,7 +31,7 @@ const MyAccommodation = () => {
     const deleteAccommodation = async () => {
       try {
         console.log("Deleting accommodation with ID:", confirmDelete); // Debug log
-        const response = await axios.delete(`http://localhost:3000/api/properties/deleteProperties/${confirmDelete}`);
+        const response = await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/api/properties/deleteProperties/${confirmDelete}`);
         // console.log("Delete response:", response.data); // Debug log
         setAccommodations(accommodations.filter(acc => acc._id !== confirmDelete));
         closeModal();

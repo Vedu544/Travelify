@@ -11,7 +11,7 @@ const Places = () => {
   useEffect(() => {
     const fetchPlaces = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/places/getPlaces')
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/places/getPlaces`)
         setPlaces(response.data)
       } catch (error) {
         console.log(error.message)

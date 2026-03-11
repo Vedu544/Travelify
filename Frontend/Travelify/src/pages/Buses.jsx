@@ -19,7 +19,7 @@ const Buses = () => {
     const fetchBus = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/Bus/busDetails",
+          `${import.meta.env.VITE_API_BASE_URL}/api/Bus/busDetails`,
           {
             params: {
               departureStation: selectedFrom,

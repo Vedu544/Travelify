@@ -31,7 +31,7 @@ const UpdateAcc = () => {
     // Fetch the existing property data
     const fetchProperty = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/properties/getProperty/${id}`);
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/properties/getProperty/${id}`);
         const property = response.data;
         setFormData({
           ...formData,
@@ -97,7 +97,7 @@ const UpdateAcc = () => {
     }
 
     try {
-      const response = await axios.put(`http://localhost:3000/api/properties/updateProperties/${id}`, data, {
+      const response = await axios.put(`${import.meta.env.VITE_API_BASE_URL}/api/properties/updateProperties/${id}`, data, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

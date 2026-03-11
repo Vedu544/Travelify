@@ -21,7 +21,7 @@ const Flight = () => {
       console.log("Selected Airlines:", selectedAirlines); // Log selected airlines
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/Flights/FlightStations",
+          `${import.meta.env.VITE_API_BASE_URL}/api/Flights/FlightStations`,
           {
             params: {
               departureStation: selectedFrom,

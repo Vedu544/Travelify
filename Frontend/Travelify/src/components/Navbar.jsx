@@ -51,7 +51,7 @@ const Navbar = ({ setSearchResultsVisible }) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/SearchRoutes/searchByName",
+        `${import.meta.env.VITE_API_BASE_URL}/api/SearchRoutes/searchByName`,
         null,
         { params: { title: searchInput } }
       );
@@ -77,7 +77,7 @@ const Navbar = ({ setSearchResultsVisible }) => {
       if (debouncedSearchInput) {
         try {
           const response = await axios.get(
-            `http://localhost:3000/api/SearchRoutes/searchSuggestions`,
+            `${import.meta.env.VITE_API_BASE_URL}/api/SearchRoutes/searchSuggestions`,
             { params: { query: debouncedSearchInput } }
           );
           setSearchSuggestions(response.data);

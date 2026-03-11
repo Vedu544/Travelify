@@ -59,7 +59,7 @@ const TripRecommendation = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/Travel/getTravelPlan",
+        `${import.meta.env.VITE_API_BASE_URL}/api/Travel/getTravelPlan`,
         {
           location: selectedCity,
           travellers: selectedTraveller,

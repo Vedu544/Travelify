@@ -16,7 +16,7 @@ const Accommodation = () => {
   useEffect(() => {
     const getAccommodation = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/properties/getProperty/${id}`)
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/properties/getProperty/${id}`)
         console.log(response.data)
         setAccommodation(response.data)
         setPhotos(response.data.photos) // Added photos to state

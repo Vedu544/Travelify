@@ -52,7 +52,7 @@ const AccForm = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:3000/api/properties/postProperties', data, {
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/properties/postProperties`, data, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

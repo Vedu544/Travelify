@@ -95,7 +95,7 @@ const MyBookings = () => {
     try {
       console.log(roomDelete);
       const response = await axios.delete(
-        `http://localhost:3000/api/rooms/cancelRoomBookings/${roomDelete}`
+        `${import.meta.env.VITE_API_BASE_URL}/api/rooms/cancelRoomBookings/${roomDelete}`
       );
       setRoomBookings(roomBookings.filter((room) => room._id !== roomDelete));
       closeModal();
@@ -110,7 +110,7 @@ const MyBookings = () => {
   const deleteAcc = async () => {
     try {
       const response = await axios.delete(
-        `http://localhost:3000/api/bookings/cancelBookings/${AccDelete}`
+        `${import.meta.env.VITE_API_BASE_URL}/api/bookings/cancelBookings/${AccDelete}`
       );
       setAccommodationBooking(
         accommodationBooking.filter((acc) => acc._id !== AccDelete)
@@ -128,7 +128,7 @@ const MyBookings = () => {
     try {
       console.log(trainDeleteId);
       const response = await axios.delete(
-        `http://localhost:3000/api/TrainBookings/cancelBookings/${trainDeleteId}`
+        `${import.meta.env.VITE_API_BASE_URL}/api/TrainBookings/cancelBookings/${trainDeleteId}`
       );
 
       if (trainBooking) {
@@ -147,7 +147,7 @@ const MyBookings = () => {
     try {
       console.log(BusDeleteId);
       const response = await axios.delete(
-        `http://localhost:3000/api/BusBookings/cancelBusBooking/${BusDeleteId}`
+        `${import.meta.env.VITE_API_BASE_URL}/api/BusBookings/cancelBusBooking/${BusDeleteId}`
       );
       if (busBooking) {
         setBusBooking(null);
@@ -165,7 +165,7 @@ const MyBookings = () => {
     try {
       console.log(FlightDelete);
       const response = await axios.delete(
-        `http://localhost:3000/api/FlightBookings/cancelFlight/${FlightDelete}`
+        `${import.meta.env.VITE_API_BASE_URL}/api/FlightBookings/cancelFlight/${FlightDelete}`
       );
       // Ensure FlightBookings is set to an empty array if there are no bookings
       if (FlightBookings.length > 0) {
@@ -186,7 +186,7 @@ const MyBookings = () => {
     const RoomBookings = async () => {
       try {
         const response = await axios.post(
-          `http://localhost:3000/api/rooms/roomBookings/${id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/rooms/roomBookings/${id}`
         );
         setRoomBookings(response.data);
       } catch (error) {
@@ -201,7 +201,7 @@ const MyBookings = () => {
     const AccommodationBookings = async () => {
       try {
         const response = await axios.post(
-          `http://localhost:3000/api/bookings/getMyPropertyBookings/${id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/bookings/getMyPropertyBookings/${id}`
         );
         setAccommodationBooking(response.data);
       } catch (error) {
@@ -216,7 +216,7 @@ const MyBookings = () => {
     const fetchTrainBooking = async () => {
       try {
         const response = await axios.post(
-          `http://localhost:3000/api/TrainBookings/getMyTrainBookings/${id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/TrainBookings/getMyTrainBookings/${id}`
         );
         console.log("API Response:", response.data);
         setTrainBooking(response.data);
@@ -232,7 +232,7 @@ const MyBookings = () => {
     const FlightBookings = async () => {
       try {
         const response = await axios.post(
-          `http://localhost:3000/api/FlightBookings/getMyFlightBookings/${id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/FlightBookings/getMyFlightBookings/${id}`
         );
         setFlightBookings(response.data);
         console.log("FlightBookings", response.data);
@@ -248,7 +248,7 @@ const MyBookings = () => {
     const BusBookings = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/BusBookings/busBookings/${id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/BusBookings/busBookings/${id}`
         );
         setBusBookings(response.data || []);
         console.log("BusBookings", response.data);

@@ -12,7 +12,7 @@ const Hotels = () => { // Renamed to Hotels
     const fetchHotels = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/hotels/gethotels"
+          `${import.meta.env.VITE_API_BASE_URL}/api/hotels/gethotels`
         );
         setHotels(response.data);
       } catch (error) {

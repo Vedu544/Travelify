@@ -39,7 +39,7 @@ const Login = () => {
     if (validateForm()) {
       try {
         const response = await axios.post(
-          "http://localhost:3000/api/auth/login",
+          `${import.meta.env.VITE_API_BASE_URL}/api/auth/login`,
           formData
         );
         if (response.status !== 200 && response.status !== 201) {

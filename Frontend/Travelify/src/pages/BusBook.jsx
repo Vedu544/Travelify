@@ -20,7 +20,7 @@ const BusBook = () => {
     const fetchBus = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/BusBookings/getBus/${id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/BusBookings/getBus/${id}`
         );
         getBus(response.data);
         console.log(response.data);
@@ -35,7 +35,7 @@ const BusBook = () => {
     try {
       console.log("Booking Bus with ID:", id);
       const response = await axios.post(
-        `http://localhost:3000/api/BusBookings/bookBus/${id}`,
+        `${import.meta.env.VITE_API_BASE_URL}/api/BusBookings/bookBus/${id}`,
         {
           title: Bus.title,
           BusNo: Bus.BusNo,

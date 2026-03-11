@@ -29,7 +29,7 @@ app.use(express.urlencoded({extended:true, limit: '50kb'  }))
 app.use(express.static('public'))
 app.use(cookieParser())
 
-//http://localhost:3000/
+//${import.meta.env.VITE_API_BASE_URL}/
 app.use("/api/auth",authRoutes)
 app.use("/api/hotels",hotelRoutes)
 app.use("/api/rooms",roomRoutes)

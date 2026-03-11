@@ -126,7 +126,7 @@ const Homepage = () => {
     const fetchPlaces = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/places/getPlaces"
+          `${import.meta.env.VITE_API_BASE_URL}/api/places/getPlaces`
         );
         setPlaces(response.data);
       } catch (error) {
@@ -140,7 +140,7 @@ const Homepage = () => {
     const fetchHotels = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/hotels/getHotels"
+          `${import.meta.env.VITE_API_BASE_URL}/api/hotels/getHotels`
         );
         setHotels(response.data);
       } catch (error) {
@@ -154,7 +154,7 @@ const Homepage = () => {
     const fetchAccommodations = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/properties/getAllProperties"
+          `${import.meta.env.VITE_API_BASE_URL}/api/properties/getAllProperties`
         );
         setAccommodations(response.data);
       } catch (error) {

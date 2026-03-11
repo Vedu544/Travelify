@@ -76,7 +76,7 @@ const Register = () => {
     try {
       console.log(formData); // Log formData to check its structure
       const response = await axios.post(
-        "http://localhost:3000/api/auth/register",
+        `${import.meta.env.VITE_API_BASE_URL}/api/auth/register`,
         formData
       );
       console.log(response);

@@ -12,7 +12,7 @@ const PhotosUploader = ({addedPhotos = [],onChange}) => {
         }
     
         axios
-          .post("http://localhost:3000/api/properties/postProperties", data, {
+          .post(`${import.meta.env.VITE_API_BASE_URL}/api/properties/postProperties`, data, {
             headers: {
               "Content-Type": "multipart/form-data",
             },
@@ -44,7 +44,7 @@ const PhotosUploader = ({addedPhotos = [],onChange}) => {
             <div key={link} className="relative">
               <img
                 className="h-60 w-full object-cover rounded-2xl"
-                src={"http://localhost:3000/uploads/" + link}
+                src={`${import.meta.env.VITE_API_BASE_URL}/uploads/${link}`}
                 alt=""
               />
               <button onClick={e => removePhoto(e,link)}

@@ -17,7 +17,7 @@ const Hotel = () => {
     const fetchHotel = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/hotels/gethotel/${id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/hotels/gethotel/${id}`
         );
         console.log("Fetched data:", response.data);
         setHotel(response.data);

@@ -30,7 +30,7 @@ const FlightBook = () => {
     const fetchInfo = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/FlightBookings/FlightInfo/${id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/FlightBookings/FlightInfo/${id}`
         );
         setFlightInfo(response.data);
         console.log(response.data);
@@ -58,7 +58,7 @@ const FlightBook = () => {
   const FlightBooking = async () => {
     try {
       const response = await axios.post(
-        `http://localhost:3000/api/FlightBookings/FlightBook/${id}`,
+        `${import.meta.env.VITE_API_BASE_URL}/api/FlightBookings/FlightBook/${id}`,
         {
           title: flightInfo.title,
           FlightNo: flightInfo.FlightNo,

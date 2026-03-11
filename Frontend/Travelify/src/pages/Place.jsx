@@ -14,7 +14,7 @@ const Place = () => {
     const fetchPlace = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/places/getPlace/${id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/places/getPlace/${id}`
         );
         setPlace(response.data);
         setPhotos(response.data.photos); // Set photos from fetched place data

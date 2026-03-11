@@ -22,7 +22,7 @@ const TrainBook = () => {
     const fetchTrains = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/TrainBookings/getTrain/${id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/TrainBookings/getTrain/${id}`
         );
         getTrain(response.data);
         // console.log(response.data);
@@ -60,7 +60,7 @@ const TrainBook = () => {
       // console.log("Booking Details:", bookingDetails); // Log the booking details
 
       const response = await axios.post(
-        `http://localhost:3000/api/TrainBookings/bookTrainTicket/${id}`,
+        `${import.meta.env.VITE_API_BASE_URL}/api/TrainBookings/bookTrainTicket/${id}`,
         bookingDetails
       );
       console.log(response.data);
