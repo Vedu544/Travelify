@@ -21,7 +21,7 @@ const registerUser = async (req, res) => {
     const user = await User.create({ username, email, password,}); 
 
     if (user) {
-      (res, user._id);
+     genrateToken(res, user._id);
       
       return res.status(201).json({
         _id: user._id,
@@ -70,14 +70,15 @@ const loginUser = async (req, res) => { // Added async keyword
   }
 };
 
-const logoutUser = async(req,res)=>{
-    res.cookie("jwt",'',{
-        httpOnly:true,
-        expires:new Date(0)
+const logoutUser = async (req, res) => {
+    res.cookie("jwt", "", {
+        httpOnly: true,
+        secure: true,        // ✅ add
+        sameSite: "None",    // ✅ add
+        expires: new Date(0),
     })
-    res.status(200).json({message:"User logged out successfully"})
+    res.status(200).json({ message: "User logged out successfully" })
 }
-
 const getUser = async(req,res)=>{ 
   // console.log("getuser called");
   const jwtSecret = process.env.JWT_SECRET; // Ensure jwtSecret is defined
