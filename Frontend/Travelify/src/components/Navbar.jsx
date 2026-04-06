@@ -53,7 +53,10 @@ const Navbar = ({ setSearchResultsVisible }) => {
       const response = await axios.post(
         `${import.meta.env.VITE_API_BASE_URL}/api/SearchRoutes/searchByName`,
         null,
-        { params: { title: searchInput } }
+        {
+          params: { title: searchInput },
+          withCredentials: true,
+        }
       );
       setSearchResults(response.data);
       setSearchResultsVisible(true);
@@ -78,7 +81,10 @@ const Navbar = ({ setSearchResultsVisible }) => {
         try {
           const response = await axios.get(
             `${import.meta.env.VITE_API_BASE_URL}/api/SearchRoutes/searchSuggestions`,
-            { params: { query: debouncedSearchInput } }
+            {
+              params: { query: debouncedSearchInput },
+              withCredentials: true,
+            }
           );
           setSearchSuggestions(response.data);
         } catch (error) {

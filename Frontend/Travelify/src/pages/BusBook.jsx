@@ -20,7 +20,8 @@ const BusBook = () => {
     const fetchBus = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_API_BASE_URL}/api/BusBookings/getBus/${id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/BusBookings/getBus/${id}`,
+          { withCredentials: true }
         );
         getBus(response.data);
         console.log(response.data);
@@ -49,7 +50,8 @@ const BusBook = () => {
           PickupPoint: Bus.PickupPoint,
           DropPoint: Bus.DropPoint,
           BusType: Bus.BusType,
-        }
+        },
+        { withCredentials: true }
       );
       console.log(response.data);
       setShowAnimation(true); // Show animation

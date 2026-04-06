@@ -40,7 +40,9 @@ const Login = () => {
       try {
         const response = await axios.post(
           `${import.meta.env.VITE_API_BASE_URL}/api/auth/login`,
-          formData
+
+          formData,
+          { withCredentials: true } 
         );
         if (response.status !== 200 && response.status !== 201) {
           throw new Error(response.data.message || "Login failed");

@@ -28,7 +28,8 @@ const Flight = () => {
               ArrivalStation: selectedTo,
               title: selectedAirlines.join(","), // Ensure selected airlines are sent correctly
             },
-          }
+          },
+          { withCredentials: true }
         );
         setFlightDetails(response.data);
         console.log(response.data);

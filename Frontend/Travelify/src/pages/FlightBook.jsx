@@ -30,7 +30,8 @@ const FlightBook = () => {
     const fetchInfo = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_API_BASE_URL}/api/FlightBookings/FlightInfo/${id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/FlightBookings/FlightInfo/${id}`,
+          { withCredentials: true }
         );
         setFlightInfo(response.data);
         console.log(response.data);
@@ -71,7 +72,8 @@ const FlightBook = () => {
           SelectedClass: selectedClass,
           SelectedAdults: Number(selectedAdults),
           TotalPrice: Totalprice,
-        }
+        },
+        { withCredentials: true }
       );
       setShowAnimation(true); // Show animation
       setTimeout(() => {

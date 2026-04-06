@@ -13,7 +13,8 @@ const Profile = () => {
     const fetchUserProfile = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_API_BASE_URL}/api/auth/Profile"`
+          `${import.meta.env.VITE_API_BASE_URL}/api/auth/Profile`,
+          { withCredentials: true }
         );
         setUser(response.data);
       } catch (error) {
@@ -27,7 +28,9 @@ const Profile = () => {
   const handleLogout = async()=>{
 
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/auth/logout`)
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/auth/logout`, {
+        withCredentials: true
+      })
       setLogout(response.data)
       toast.success("Logout successful")
       navigate("/")

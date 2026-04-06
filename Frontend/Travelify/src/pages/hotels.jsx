@@ -12,7 +12,8 @@ const Hotels = () => { // Renamed to Hotels
     const fetchHotels = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_API_BASE_URL}/api/hotels/gethotels`
+          `${import.meta.env.VITE_API_BASE_URL}/api/hotels/gethotels`,
+          { withCredentials: true } 
         );
         setHotels(response.data);
       } catch (error) {

@@ -11,7 +11,9 @@ const Places = () => {
   useEffect(() => {
     const fetchPlaces = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/places/getPlaces`)
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/places/getPlaces`, {
+          withCredentials: true
+        })
         setPlaces(response.data)
       } catch (error) {
         console.log(error.message)

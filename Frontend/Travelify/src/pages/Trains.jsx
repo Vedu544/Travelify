@@ -26,6 +26,9 @@ const Trains = () => {
               arrivalStation: selectedTo,
               trainClass: selectedClass.join(','),
             },
+          },
+          {
+            withCredentials: true
           }
         );
         setTrainDetails(response.data);

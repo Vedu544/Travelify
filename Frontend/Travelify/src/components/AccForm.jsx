@@ -52,10 +52,12 @@ const AccForm = () => {
     }
 
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/properties/postProperties`, data, {
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/properties/postProperties`, 
+        data, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
+        withCredentials: true,
       });
       console.log('Property posted successfully:', response.data);
       toast.success('Property posted successfully! , Check "Your Accommmodation"')

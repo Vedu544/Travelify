@@ -77,7 +77,10 @@ const Register = () => {
       console.log(formData); // Log formData to check its structure
       const response = await axios.post(
         `${import.meta.env.VITE_API_BASE_URL}/api/auth/register`,
-        formData
+        formData,
+        {
+          withCredentials: true
+        }
       );
       console.log(response);
       if (response.status !== 200 && response.status !== 201) {

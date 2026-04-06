@@ -16,6 +16,7 @@ const PhotosUploader = ({addedPhotos = [],onChange}) => {
             headers: {
               "Content-Type": "multipart/form-data",
             },
+            withCredentials: true,
           })
           .then((response) => {
             const { data: filenames } = response;
@@ -46,6 +47,7 @@ const PhotosUploader = ({addedPhotos = [],onChange}) => {
                 className="h-60 w-full object-cover rounded-2xl"
                 src={`${import.meta.env.VITE_API_BASE_URL}/uploads/${link}`}
                 alt=""
+                withCredentials={true}
               />
               <button onClick={e => removePhoto(e,link)}
                 className="absolute bottom-1 right-1 text-white bg-black bg-opacity-50 rounded-2xl py-1 px-1 cursor-pointer"

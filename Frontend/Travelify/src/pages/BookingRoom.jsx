@@ -47,7 +47,8 @@ const BookingRoom = () => {
     const fetchRoom = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_API_BASE_URL}/api/rooms/rooms/${id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/rooms/rooms/${id}`,
+          { withCredentials: true }
         );
         setRoom(response.data);
         console.log("Room fetched successfully:", response.data); // Log the room data
@@ -74,7 +75,8 @@ const BookingRoom = () => {
           category: room.category, 
           address: room.address,
           photos: room.photos, 
-        }
+        },
+        { withCredentials: true }
       );
       setRoom(response.data);
       setShowAnimation(true); // Show animation

@@ -22,7 +22,8 @@ const AccommodationBooking = () => {
     const getAccommodation = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_API_BASE_URL}/api/properties/getProperty/${id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/properties/getProperty/${id}`,
+          { withCredentials: true } 
         );
         setAccommodation(response.data);
       } catch (error) {
@@ -45,8 +46,10 @@ const AccommodationBooking = () => {
           totalPrice: totalPrice,
           address: accommodation.address, // Ensure address is included
           photos: accommodation.photos, // Ensure photos are included
-        }
+        },
+        { withCredentials: true }
       );
+      
       // Preserve the photos property
       setAccommodation((prevAccommodation) => ({
         ...prevAccommodation,

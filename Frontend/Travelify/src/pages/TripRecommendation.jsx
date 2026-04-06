@@ -64,6 +64,9 @@ const TripRecommendation = () => {
           location: selectedCity,
           travellers: selectedTraveller,
           budget: selectedBudget,
+        },
+        {
+          withCredentials: true
         }
       );
       setTrips(response.data);

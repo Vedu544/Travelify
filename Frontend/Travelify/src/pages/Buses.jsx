@@ -26,7 +26,8 @@ const Buses = () => {
               ArrivalStation: selectedTo,
               BusType: selectedBus.join(","),
             },
-          }
+          },
+          { withCredentials: true }
         );
         getBus(response.data);
         console.log(response.data);

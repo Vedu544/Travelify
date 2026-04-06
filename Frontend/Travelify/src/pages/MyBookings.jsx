@@ -95,7 +95,8 @@ const MyBookings = () => {
     try {
       console.log(roomDelete);
       const response = await axios.delete(
-        `${import.meta.env.VITE_API_BASE_URL}/api/rooms/cancelRoomBookings/${roomDelete}`
+        `${import.meta.env.VITE_API_BASE_URL}/api/rooms/cancelRoomBookings/${roomDelete}`,
+        { withCredentials: true } 
       );
       setRoomBookings(roomBookings.filter((room) => room._id !== roomDelete));
       closeModal();
@@ -110,7 +111,8 @@ const MyBookings = () => {
   const deleteAcc = async () => {
     try {
       const response = await axios.delete(
-        `${import.meta.env.VITE_API_BASE_URL}/api/bookings/cancelBookings/${AccDelete}`
+        `${import.meta.env.VITE_API_BASE_URL}/api/bookings/cancelBookings/${AccDelete}`,
+        { withCredentials: true } 
       );
       setAccommodationBooking(
         accommodationBooking.filter((acc) => acc._id !== AccDelete)
@@ -128,7 +130,8 @@ const MyBookings = () => {
     try {
       console.log(trainDeleteId);
       const response = await axios.delete(
-        `${import.meta.env.VITE_API_BASE_URL}/api/TrainBookings/cancelBookings/${trainDeleteId}`
+        `${import.meta.env.VITE_API_BASE_URL}/api/TrainBookings/cancelBookings/${trainDeleteId}`,
+        { withCredentials: true } 
       );
 
       if (trainBooking) {
@@ -147,7 +150,8 @@ const MyBookings = () => {
     try {
       console.log(BusDeleteId);
       const response = await axios.delete(
-        `${import.meta.env.VITE_API_BASE_URL}/api/BusBookings/cancelBusBooking/${BusDeleteId}`
+        `${import.meta.env.VITE_API_BASE_URL}/api/BusBookings/cancelBusBooking/${BusDeleteId}`,
+        { withCredentials: true } 
       );
       if (busBooking) {
         setBusBooking(null);
@@ -165,7 +169,8 @@ const MyBookings = () => {
     try {
       console.log(FlightDelete);
       const response = await axios.delete(
-        `${import.meta.env.VITE_API_BASE_URL}/api/FlightBookings/cancelFlight/${FlightDelete}`
+        `${import.meta.env.VITE_API_BASE_URL}/api/FlightBookings/cancelFlight/${FlightDelete}`,
+        { withCredentials: true } 
       );
       // Ensure FlightBookings is set to an empty array if there are no bookings
       if (FlightBookings.length > 0) {
@@ -186,7 +191,8 @@ const MyBookings = () => {
     const RoomBookings = async () => {
       try {
         const response = await axios.post(
-          `${import.meta.env.VITE_API_BASE_URL}/api/rooms/roomBookings/${id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/rooms/roomBookings/${id}`,
+          { withCredentials: true } 
         );
         setRoomBookings(response.data);
       } catch (error) {
@@ -201,7 +207,8 @@ const MyBookings = () => {
     const AccommodationBookings = async () => {
       try {
         const response = await axios.post(
-          `${import.meta.env.VITE_API_BASE_URL}/api/bookings/getMyPropertyBookings/${id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/bookings/getMyPropertyBookings/${id}`,
+          { withCredentials: true } 
         );
         setAccommodationBooking(response.data);
       } catch (error) {
@@ -216,7 +223,8 @@ const MyBookings = () => {
     const fetchTrainBooking = async () => {
       try {
         const response = await axios.post(
-          `${import.meta.env.VITE_API_BASE_URL}/api/TrainBookings/getMyTrainBookings/${id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/TrainBookings/getMyTrainBookings/${id}`,
+          { withCredentials: true } 
         );
         console.log("API Response:", response.data);
         setTrainBooking(response.data);
@@ -232,7 +240,8 @@ const MyBookings = () => {
     const FlightBookings = async () => {
       try {
         const response = await axios.post(
-          `${import.meta.env.VITE_API_BASE_URL}/api/FlightBookings/getMyFlightBookings/${id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/FlightBookings/getMyFlightBookings/${id}`,
+          { withCredentials: true } 
         );
         setFlightBookings(response.data);
         console.log("FlightBookings", response.data);
@@ -248,7 +257,8 @@ const MyBookings = () => {
     const BusBookings = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_API_BASE_URL}/api/BusBookings/busBookings/${id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/BusBookings/busBookings/${id}`,
+          { withCredentials: true } 
         );
         setBusBookings(response.data || []);
         console.log("BusBookings", response.data);

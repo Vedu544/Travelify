@@ -38,7 +38,10 @@ const Room = () => {
     const fetchRoom = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_API_BASE_URL}/api/rooms/rooms/${id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/rooms/rooms/${id}`,
+          {
+            withCredentials: true
+          }
         );
         setRoom(response.data);
         console.log("Room fetched successfully:", response.data);
@@ -58,7 +61,8 @@ const Room = () => {
           checkOut: checkOut,
           maxGuests: maxGuests, // Include max guests in the booking data
           days: days // Include days in the booking data
-        }
+        },
+        { withCredentials: true }
       );
       setRoom(response.data);
       toast.success("Room booked successfully!");

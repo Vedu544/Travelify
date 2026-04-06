@@ -15,12 +15,15 @@ const Citypage = () => {
   useEffect(()=>{
     const fetchCity = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/places/getPlacesByCity/${city}`)
+      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/places/getPlacesByCity/${city}`,
+        { withCredentials: true }
+      )
       setPlaces(response.data)
       console.log(response.data)
     } catch (error) {
       console.log("Error fetching City Places:", error.message);
     }
+
   }
   fetchCity();
   },[])

@@ -22,7 +22,10 @@ const TrainBook = () => {
     const fetchTrains = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_API_BASE_URL}/api/TrainBookings/getTrain/${id}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/TrainBookings/getTrain/${id}`,
+          {
+            withCredentials: true
+          }
         );
         getTrain(response.data);
         // console.log(response.data);
@@ -61,7 +64,10 @@ const TrainBook = () => {
 
       const response = await axios.post(
         `${import.meta.env.VITE_API_BASE_URL}/api/TrainBookings/bookTrainTicket/${id}`,
-        bookingDetails
+        bookingDetails,
+        {
+          withCredentials: true
+        }
       );
       console.log(response.data);
       setShowAnimation(true); // Show animation on success
