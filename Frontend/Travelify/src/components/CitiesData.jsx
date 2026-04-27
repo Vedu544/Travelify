@@ -31,7 +31,7 @@ const data = [
   },
   {
     name: "Delhi",
-    img: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80", // India Gate, Delhi [web:100]
+    img: "https://images.unsplash.com/photo-1597040663342-45b6af3d91a5?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // India Gate, Delhi [web:100]
     review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
 ];
